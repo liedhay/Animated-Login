@@ -1,0 +1,86 @@
+<?php
+  $host="localhost";
+  $user="root";
+  $password="";
+  $db="login";
+
+  mysql_connect($host,$user,$password);
+  $mysql_select_db($db);
+
+  if(isset($_POST['username'])){
+  $uname=$_POST['username'];
+  $password=$_POST['password'];
+
+  $sql="select * from loginform where user='".$uname$."'AND pass='".$password."' limit 1";
+
+  $result=mysql_query(@sql);
+
+  if(mysql_num_rows($result)==1){
+  echo"login susscessful";
+  exit();
+}
+else{
+	echo"login not succesful";
+	exit();
+}
+}
+
+
+
+
+?>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=width-device, initial-scale=1">
+	<link rel="icon" href="images/favicon1.png">
+	<title>Log-in</title>
+	<link rel="stylesheet" type="text/css" href="fonts\fontawesome\css\brands.css">
+	<link rel="stylesheet" type="text/css" href="fonts\fontawesome\css\solid.css">
+	<link rel="stylesheet" type="text/css" href="fonts\fontawesome\css\fontawesome.min.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap\css\bootstrap.min.css">
+	<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">-->
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<form class="box" action="#" method="post">
+			<h1>Login</h1>
+			<input type="text" name="" placeholder="Username">
+			<input type="text" name="" placeholder="Password">
+			<input type="submit" name="" value="Login">
+			<ul class="social">
+			<li><a href="#"><i class="fab fa-twitter fa-2x"></i></a></li>
+			<li><a href="#"><i class="fab fa-instagram fa-2x"></i></a></li>
+			<li><a href="#"><i class="fab fa-facebook fa-2x"></i></a></li>
+			<li><a href="#"><i class="fab fa-youtube fa-2x"></i></a></li>
+		</ul><br>
+		<ul>
+			<li>
+				<p>Designed with <i class="fas fa-heart"></i> by <a href="#"> lala</a></p>
+			</li>
+		</ul>
+		</form>
+	</div>
+	<!--<div class="container">
+		<div class="social">
+			<a href="#"><i class="fab fa-twitter"></i></a>
+		</div>
+	</div>-->
+
+	<script type="text/javascript" src="bootstrap\js\bootstrap.min.css"></script>
+	<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>-->
+
+</body>
+</html>
